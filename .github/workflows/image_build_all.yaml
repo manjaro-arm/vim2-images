@@ -131,7 +131,7 @@ jobs:
           sha1sum $FILE_PATH > $(basename $FILE_PATH).sha1
 
           echo "FILE_PATH=$(basename $FILE_PATH)" >> $GITHUB_ENV
-          echo "FILE_SHA256=$(basename $FILE_PATH).sha1" >> $GITHUB_ENV
+          echo "FILE_SHA1=$(basename $FILE_PATH).sha1" >> $GITHUB_ENV
           
           FILE_PKG=$(find /var/cache/manjaro-arm-tools/img -type f -name "*-pkgs.txt" -exec stat -c '%Y %n' {} \; | sort -nr | awk 'NR==1 {print $2}')
           cp -v $FILE_PKG .
@@ -154,8 +154,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ needs.prepare_release.outputs.upload_url }}
-          asset_path: ./${{ env.FILE_SHA256 }}
-          asset_name: ${{ env.FILE_SHA256 }}
+          asset_path: ./${{ env.FILE_SHA1 }}
+          asset_name: ${{ env.FILE_SHA1 }}
           asset_content_type: text/plain
       - 
         id: upload_pkg
@@ -277,7 +277,7 @@ jobs:
           sha1sum $FILE_PATH > $(basename $FILE_PATH).sha1
 
           echo "FILE_PATH=$(basename $FILE_PATH)" >> $GITHUB_ENV
-          echo "FILE_SHA256=$(basename $FILE_PATH).sha1" >> $GITHUB_ENV
+          echo "FILE_SHA1=$(basename $FILE_PATH).sha1" >> $GITHUB_ENV
           
           FILE_PKG=$(find /var/cache/manjaro-arm-tools/img -type f -name "*-pkgs.txt" -exec stat -c '%Y %n' {} \; | sort -nr | awk 'NR==1 {print $2}')
           cp -v $FILE_PKG .
@@ -300,8 +300,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ needs.prepare_release.outputs.upload_url }}
-          asset_path: ./${{ env.FILE_SHA256 }}
-          asset_name: ${{ env.FILE_SHA256 }}
+          asset_path: ./${{ env.FILE_SHA1 }}
+          asset_name: ${{ env.FILE_SHA1 }}
           asset_content_type: text/plain
       - 
         id: upload_pkg
@@ -423,7 +423,7 @@ jobs:
           sha1sum $FILE_PATH > $(basename $FILE_PATH).sha1
 
           echo "FILE_PATH=$(basename $FILE_PATH)" >> $GITHUB_ENV
-          echo "FILE_SHA256=$(basename $FILE_PATH).sha1" >> $GITHUB_ENV
+          echo "FILE_SHA1=$(basename $FILE_PATH).sha1" >> $GITHUB_ENV
           
           FILE_PKG=$(find /var/cache/manjaro-arm-tools/img -type f -name "*-pkgs.txt" -exec stat -c '%Y %n' {} \; | sort -nr | awk 'NR==1 {print $2}')
           cp -v $FILE_PKG .
@@ -446,8 +446,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ needs.prepare_release.outputs.upload_url }}
-          asset_path: ./${{ env.FILE_SHA256 }}
-          asset_name: ${{ env.FILE_SHA256 }}
+          asset_path: ./${{ env.FILE_SHA1 }}
+          asset_name: ${{ env.FILE_SHA1 }}
           asset_content_type: text/plain
       - 
         id: upload_pkg
@@ -569,7 +569,7 @@ jobs:
           sha1sum $FILE_PATH > $(basename $FILE_PATH).sha1
 
           echo "FILE_PATH=$(basename $FILE_PATH)" >> $GITHUB_ENV
-          echo "FILE_SHA256=$(basename $FILE_PATH).sha1" >> $GITHUB_ENV
+          echo "FILE_SHA1=$(basename $FILE_PATH).sha1" >> $GITHUB_ENV
           
           FILE_PKG=$(find /var/cache/manjaro-arm-tools/img -type f -name "*-pkgs.txt" -exec stat -c '%Y %n' {} \; | sort -nr | awk 'NR==1 {print $2}')
           cp -v $FILE_PKG .
@@ -592,8 +592,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ needs.prepare_release.outputs.upload_url }}
-          asset_path: ./${{ env.FILE_SHA256 }}
-          asset_name: ${{ env.FILE_SHA256 }}
+          asset_path: ./${{ env.FILE_SHA1 }}
+          asset_name: ${{ env.FILE_SHA1 }}
           asset_content_type: text/plain
       - 
         id: upload_pkg
